@@ -34,3 +34,7 @@ This project contains a responsive and functional **"Upcoming Reservations"** co
 ```bash
 git clone https://github.com/yourusername/upcoming-reservations-ui.git
 cd upcoming-reservations-ui
+
+npm install
+npm start
+
