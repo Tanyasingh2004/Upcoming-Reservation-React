@@ -1,0 +1,37 @@
+import React from "react";
+import { reservations } from "./reservations";
+
+const UpcomingReservations = () => {
+  const handleCancel = (id) => {
+    console.log("Cancel reservation:", id);
+  };
+
+  return (
+    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {reservations.map((res) => (
+        <div
+          key={res.id}
+          className="bg-white border border-gray-200 shadow-md rounded-2xl p-6 transition hover:shadow-xl"
+        >
+          <h2 className="text-2xl font-semibold text-indigo-700">
+            {res.venueName}
+          </h2>
+          <p className="text-gray-600">📅 Date: <span className="font-medium">{res.date}</span></p>
+          <p className="text-gray-600">⏰ Time: <span className="font-medium">{res.time}</span></p>
+          <p className="text-gray-600">👥 Party Size: <span className="font-medium">{res.partySize}</span></p>
+          <p className={text-sm font-semibold mt-2 ${res.status === "Confirmed" ? "text-green-600" : "text-yellow-600"}}>
+            Status: {res.status}
+          </p>
+          <button
+            className="mt-4 w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
+            onClick={() => handleCancel(res.id)}
+          >
+            Cancel
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default UpcomingReservations;
